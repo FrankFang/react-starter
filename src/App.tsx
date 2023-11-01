@@ -9,7 +9,10 @@ export const App: React.FC = () => {
     p-8 w-96 m-auto dark:bg-black dark:text-white dark:border-white"
     >
       Hello world!
-      <Icon className="dark:text-blue-500 w-[1.2em] h-[1.2em] text-gray-500" icon="mdi-light:home" />
+      <Icon
+        className="dark:text-blue-500 w-[1.2em] h-[1.2em] text-gray-500"
+        icon="bi:bag-heart-fill"
+      />
       <button onClick={onClick}>Dark</button>
     </div>
   )

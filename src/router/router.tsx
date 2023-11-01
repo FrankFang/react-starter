@@ -1,11 +1,12 @@
 import { createHashRouter } from 'react-router-dom'
+import { App } from '@/App'
 
 export const router = createHashRouter([
   {
     path: '/',
     children: [{
       path: '/',
-      element: <div>1</div>,
+      element: <App />,
     }, {
       path: '/2',
       element: <div>2</div>,

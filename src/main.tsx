@@ -12,3 +12,4 @@ app.render(
     <RouterProvider router={router} />
   </React.StrictMode>,
 )
+

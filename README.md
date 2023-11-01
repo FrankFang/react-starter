@@ -1,27 +1,28 @@
-# React + TypeScript + Vite
+# 好用的 React 启动项目
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+这是我从零开始搭建的一个 React 项目，包含了
 
-Currently, two official plugins are available:
+1. React 18
+1. Vite 4.5
+1. TailwindCSS
+1. Iconify
+1. React Router 6.18
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 一些技巧
 
-## Expanding the ESLint configuration
+### 使用 Icon
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```tsx
+import { Icon } from '@iconify/react'
+<Icon className="dark:text-blue-500 w-[1.2em] h-[1.2em] text-gray-500" icon="mdi-light:home" />
 ```
+其中 icon 的名字你可以去 https://icones.js.org/ 搜索，然后复制你喜欢的 icon 的名称填入 icon 属性即可。
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+
+### 在组件外切换路由
+
+```tsx
+import { router } from '@/router/router'
+router.navigate('/home')
+```
