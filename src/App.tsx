@@ -1,11 +1,10 @@
 import { Icon } from '@iconify/react/dist/iconify.js'
 import { useUserStore } from '@/stores/user_store'
+import { useTheme } from '@/hooks/use_theme'
 
 export const App: React.FC = () => {
   const { user, updateUser } = useUserStore()
-  const onClick = () => {
-    document.documentElement.classList.toggle('dark')
-  }
+  const { theme, toggleTheme } = useTheme()
   const onClickAge = () => {
     updateUser({ age: user.age + 1 })
   }
@@ -18,7 +17,7 @@ export const App: React.FC = () => {
           className="dark:text-blue-500 w-[1.2em] h-[1.2em] text-gray-500"
           icon="bi:bag-heart-fill"
         />
-        <button onClick={onClick}>Dark</button>
+        <button onClick={toggleTheme}>{theme}</button>
       </div>
       <div>
         User Age:
